@@ -1,0 +1,16 @@
+ 1024  aws ec2 describe-instances --profile user-1
+ 1025  aws configure --profile user-2
+ 1026  aws ec2 describe-instances --profile user-2
+ 1027  aws ec2 stop-instances --instance-ids i-0f1139d76206395d0 --profile user-2
+ 1028  aws configure --profile user-3
+ 1029  aws ec2 stop-instances --instance-ids i-0f1139d76206395d0 --profile user-3
+ 1030  mkdir -p ~/Documents/AWS-Portfolio/Lab1-IAM\ncd ~/Documents/AWS-Portfolio
+ 1031  git init
+ 1032  echo "# AWS-Portfolio-CCP" >> README.md\ngit init\ngit add README.md\ngit commit -m "first commit"\ngit branch -M main\ngit remote add origin https://github.com/SirKitoGio/AWS-Portfolio-CCP.git\ngit push -u origin main
+ 1033  cd Lab1-IAM
+ 1034  nano README.md
+ 1035  cd ..
+ 1036  git add .\ngit commit -m "Add detailed documentation for Lab 1: IAM Governance"\ngit push
+ 1037  cd ~/Documents/AWS-Portfolio/Lab1-IAM\n# Update the README.md with the text above\ngit add README.md\ngit commit -m "Finalize professional documentation for Lab 1"\ngit push
+ 1038  cd ~/Documents/AWS-Portfolio/Lab1-IAM\n# Update the README.md with the text above\ngit add README.md\ngit commit -m "Finalize professional documentation for Lab 1"\ngit push
+ 1039  cd
