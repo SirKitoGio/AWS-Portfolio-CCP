@@ -19,3 +19,26 @@ I bypassed the standard management console to execute all configurations via the
 
 ## Results
 Successfully validated all 6 lifecycle tasks with a perfect score of **40/40**.
+
+
+Technical Implementation
+1. Configuration of Administrative Identity
+I initiated the lab by establishing the primary administrative connection to the AWS environment:
+
+Bash
+aws configure set region us-west-2
+aws sts get-caller-identity
+2. Policy and Group Association
+I mapped the organizational requirements to IAM groups and assigned the necessary users to ensure inherited permissions:
+
+Bash
+aws iam add-user-to-group --user-name user-1 --group-name S3-Support
+aws iam add-user-to-group --user-name user-2 --group-name EC2-Support
+aws iam add-user-to-group --user-name user-3 --group-name EC2-Admin
+3. Cross-Account Permission Validation
+To verify the security boundaries, I configured a named profile for user-1 to test the enforcement of the Principle of Least Privilege:
+
+Bash
+# Attempting to list EC2 instances as an S3 Support user
+aws ec2 describe-instances --profile user-1
+Result: System returned UnauthorizedOperation, confirming that the IAM policy successfully restricted unauthorized cross-service access.
